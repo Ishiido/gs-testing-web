@@ -8,19 +8,30 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class GreetingController {
 
-    private final GreetingService service;
-    private final SingletonService sS;
+    private  GreetingService service;
+    //private  SingletonService sS;
     
 
+//    public void setService( GreetingService service)
+//    {
+//        this.service = service;
+//    }
+    
+    
+//    public void setSS( SingletonService sS)
+//    {
+//        this.sS = sS;
+//    }
+    
     public GreetingController(GreetingService service) {
         this.service = service;
-        this.sS = null;
+        // this.sS = null;
     }
-    
-    public GreetingController(SingletonService service) {
-        this.sS = service;
-        this.service = null;
-    }
+//    
+//    public GreetingController(SingletonService service) {
+//        this.sS = service;
+//        this.service = null;
+//    }
 
     
 
