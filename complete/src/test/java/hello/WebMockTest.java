@@ -24,6 +24,9 @@ public class WebMockTest {
 
     @MockBean
     private GreetingService service;
+    
+//    @MockBean 
+//    private SingletonService singletonService;
 
     @Test
     public void greetingShouldReturnMessageFromService() throws Exception {
@@ -31,4 +34,14 @@ public class WebMockTest {
         this.mockMvc.perform(get("/greeting")).andDo(print()).andExpect(status().isOk())
                 .andExpect(content().string(containsString("Hello Mock")));
     }
+    
+    
+//    @Test
+//    public void singletonServiceShouldReturnMessageFromService() throws Exception
+//    {
+//        when(singletonService.returnAString()).thenReturn("BString");
+//        this.mockMvc.perform(get("/returnString")).andDo(print()).andExpect(status().isOk())
+//        .andExpect(content().string(containsString("BString")));
+//    }
+    
 }
