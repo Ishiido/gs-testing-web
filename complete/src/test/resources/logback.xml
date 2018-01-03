@@ -3,7 +3,7 @@
 
 	<appender name="FILE-AUDIT"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>/var/tmp/WebhookController.log</file>
+		<file>/var/tmp/gs-testing-web.log</file>
 		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
 			<Pattern>
 				%d{yyyy-MM-dd HH:mm:ss} - [%thread] %-5level %logger{50} - %msg%n

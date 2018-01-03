@@ -1,15 +1,25 @@
 package hello;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 @Service
 public class NonSingletonService {
-    
-    private  NonSingletonService( String pathToProp)
+	static final Logger logger = LoggerFactory.getLogger(Application.class);
+
+	private String pathToProp;
+	public  NonSingletonService( String pathToProp)
     {
+    	logger.debug(String.format("Inside Constructor: >%s<", pathToProp));
+    	this.pathToProp = pathToProp;
         this.init(pathToProp);
     }
     
+	public void setPathToProp(String p)
+	{
+		this.pathToProp = p;
+	}
     
     /**
      * The method hjust returns a string.
@@ -17,6 +27,7 @@ public class NonSingletonService {
      */
     public String returnAString()
     {
+    	logger.debug("Inside returnAString");
         return "AString";
     }
 
@@ -25,6 +36,7 @@ public class NonSingletonService {
      * @param pathToConfig The name of the file for configuring the service.
      */
     private void init(String pathToConfig) {
-        // ... do the config
+    	logger.debug(String.format("Inside init: >%s<", pathToConfig));
+        
     }
 }
